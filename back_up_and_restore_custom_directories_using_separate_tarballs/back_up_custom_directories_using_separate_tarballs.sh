@@ -74,7 +74,7 @@ tar -cvzpf config_dir.tgz "$HOME/config/" 2>> dirs.log
 # tar preserves symlinks by default (it stores the link itself, not what it
 # points to, and the symlink relationship is stored.)
 echo "=== BACKUP START: disorganized-dotfiles_dir.tgz ===" | tee -a dirs.log
-tar -cvzpf disorganized-dotfiles_dir.tgz "$HOME/.bashrc" "$HOME/.tmux.conf.local" "$HOME/.vimrc" "$HOME/.wezterm.lua" "$HOME/.zshrc" "$HOME/.zsh_history" 2>> dirs.log
+tar -cvzpf disorganized-dotfiles_dir.tgz "$HOME/.bashrc" "$HOME/.tmux.conf.local" "$HOME/.vimrc" "$HOME/.wezterm.lua" "$HOME/.zshenv" "$HOME/.zshrc" "$HOME/.zsh_history" 2>> dirs.log
 
 # User passwords and keys
 # Password Keyrings & Stored Passwords. Also, Private Keys & Certificates
@@ -130,18 +130,18 @@ echo "=== BACKUP START: all_databases_*.sql.gz ===" | tee -a dirs.log
 # Databases are already compressed (not archived) by the PostgreSQL back up
 # script, so no need to run:
 # sudo tar -cvzpf backups-postgresql_dir.tgz /var/backups/postgresql/ 2>> dirs.log
-cp -dpR /var/backups/postgresql/* ./ 2>> dirs.log
+sudo cp -dpR /var/backups/postgresql/* ./ 2>> dirs.log
 
 # Local user: root (sudo is required)
 # -----------------------------------
 
 # Root user directories
 #echo "=== BACKUP START: root_dir.tgz ===" | tee -a dirs.log
-#tar -cvzpf root_dir.tgz /root/ 2>> dirs.log
+#sudo tar -cvzpf root_dir.tgz /root/ 2>> dirs.log
 
 # System configs (networking, services out of user spaces, etc.)
 echo "=== BACKUP START: etc_dir.tgz  ===" | tee -a dirs.log
-tar -cvzpf etc_dir.tgz /etc/ 2>> dirs.log
+sudo tar -cvzpf etc_dir.tgz /etc/ 2>> dirs.log
 
 # Pandoras universal chroot environment images
 #echo "=== BACKUP START: pandoras-images_dir.tgz ===" | tee -a dirs.log
