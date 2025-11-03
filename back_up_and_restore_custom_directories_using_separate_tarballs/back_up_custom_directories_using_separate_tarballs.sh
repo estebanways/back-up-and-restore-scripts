@@ -45,8 +45,8 @@ while true; do sudo -n true; sleep 60; kill -0 $$ || exit; done 2> /dev/null &
 
 # User configs
 # Desktop application configs
-echo "=== BACKUP START: BraveSoftware_dir.tgz ===" | tee -a dirs.log
-tar -cvzpf BraveSoftware_dir.tgz "$HOME/.config/BraveSoftware/" 2>> dirs.log
+#echo "=== BACKUP START: BraveSoftware_dir.tgz ===" | tee -a dirs.log
+#tar -cvzpf BraveSoftware_dir.tgz "$HOME/.config/BraveSoftware/" 2>> dirs.log
 echo "=== BACKUP START: obs-studio_dir.tgz ===" | tee -a dirs.log
 tar -cvzpf obs-studio_dir.tgz "$HOME/.config/obs-studio/" 2>> dirs.log
 
@@ -65,6 +65,10 @@ echo "=== BACKUP START: ollama_dir.tgz ===" | tee -a dirs.log
 tar -cvzpf ollama_dir.tgz "$HOME/.ollama/" 2>> dirs.log
 echo "=== BACKUP START: sword-vim-nvim-site-only_dir.tgz ===" | tee -a dirs.log
 tar -cvzpf sword-vim-nvim-site-only_dir.tgz "$HOME/.local/share/nvim/site/" 2>> dirs.log
+
+# Terminal application configs
+echo "=== BACKUP START: pash-config_dir.tgz ===" | tee -a dirs.log
+tar -cvzpf pash-config_dir.tgz "$HOME/.config/pash/" 2>> dirs.log
 
 # Custom user configs
 echo "=== BACKUP START: config_dir.tgz ===" | tee -a dirs.log
@@ -91,8 +95,8 @@ tar -cvzpf ssh_dir.tgz "$HOME/.ssh/" 2>> dirs.log
 echo "=== BACKUP START: gnupg_dir.tgz ===" | tee -a dirs.log
 tar -cvzpf gnupg_dir.tgz "$HOME/.gnupg/" 2>> dirs.log
 # Pash store (Requires gnupg keys from backup or exported and imported)
-echo "=== BACKUP START: pash_dir.tgz ===" | tee -a dirs.log
-tar -cvzpf pash_dir.tgz "$HOME/.local/share/pash/" 2>> dirs.log
+echo "=== BACKUP START: pash-store_dir.tgz ===" | tee -a dirs.log
+tar -cvzpf pash-store_dir.tgz "$HOME/.local/share/pash/" 2>> dirs.log
 
 # Default user directories
 echo "=== BACKUP START: Documents_dir.tgz ===" | tee -a dirs.log
