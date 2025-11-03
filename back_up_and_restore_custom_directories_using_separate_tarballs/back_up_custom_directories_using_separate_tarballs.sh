@@ -82,8 +82,8 @@ echo "=== BACKUP START: keyrings_dir.tgz ===" | tee -a dirs.log
 tar -cvzpf keyrings_dir.tgz "$HOME/.local/share/keyrings/" 2>> dirs.log
 # Private Keys & Certificates (certificates used by applications like web
 # browsers and email clients kept in a separate database)
-echo "=== BACKUP START: pki_dir.tgz ===" | tee -a dirs.log
-tar -cvzpf pki_dir.tgz "$HOME/.pki/nssdb/" 2>> dirs.log
+#echo "=== BACKUP START: pki_dir.tgz ===" | tee -a dirs.log
+#tar -cvzpf pki_dir.tgz "$HOME/.pki/nssdb/" 2>> dirs.log
 # Secure Shell (SSH) Keys
 echo "=== BACKUP START: ssh_dir.tgz ===" | tee -a dirs.log
 tar -cvzpf ssh_dir.tgz "$HOME/.ssh/" 2>> dirs.log
