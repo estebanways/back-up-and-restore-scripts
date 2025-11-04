@@ -123,8 +123,8 @@ echo "=== BACKUP START: commbase_dir.tgz ===" | tee -a dirs.log
 tar -cvzpf commbase_dir.tgz "$HOME/Docker/stacks/commbase/" 2>> dirs.log
 echo "=== BACKUP START: devstation_dir.tgz ===" | tee -a dirs.log
 tar -cvzpf devstation_dir.tgz "$HOME/Docker/stacks/devstation/" 2>> dirs.log
-echo "=== BACKUP START: multiple-dev-container-vscode_dir.tgz ===" | tee -a dirs.log
-tar -cvzpf multiple-dev-container-vscode_dir.tgz "$HOME/Docker/stacks/multiple-dev-container-vscode/" 2>> dirs.log
+echo "=== BACKUP START: practical-docker_dir.tgz ===" | tee -a dirs.log
+tar -cvzpf practical-docker_dir.tgz "$HOME/Docker/stacks/practical-docker/" 2>> dirs.log
 
 # Local user: postgres (sudo is required)
 # ---------------------------------------
